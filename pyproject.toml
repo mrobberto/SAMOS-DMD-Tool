@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "samos-target-tool"
+version = "1.4.5"
+description = "SAMOS target selection, ALL masks, calibration subsets, and observing charts"
+requires-python = ">=3.10"
+dependencies = ["numpy", "pandas", "astropy", "astroquery", "matplotlib", "requests", "lxml", "html5lib", "beautifulsoup4"]
+
+[project.scripts]
+samos-target-tool = "samos_target_tool.cli:main"
+samos-prepare = "samos_prepare:main"
+
+[tool.setuptools]
+py-modules = ["samos_prepare"]
+
+[tool.setuptools.packages.find]
+include = ["samos_target_tool*"]
